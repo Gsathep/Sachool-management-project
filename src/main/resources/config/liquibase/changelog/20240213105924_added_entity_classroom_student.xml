@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+   <changeSet id="20240213105924" author="geeta">
+       <createTable tableName="classroom_student">
+           <column name="id" type="bigint" autoIncrement="true">
+               <constraints primaryKey="true" nullable="false"/>
+           </column>
+           <column name="classroom_id" type="bigint"/>
+           <column name="student_id" type="bigint"/>
+
+           <column name="created_date" type="${datetimeType}">
+               <constraints nullable="true"/>
+           </column>
+           <column name="created_by" type="varchar(255)">
+               <constraints nullable="true"/>
+           </column>
+           <column name="last_modified_by" type="${datetimeType}">
+               <constraints nullable="true"/>
+           </column>
+           <column name="last_modified_date" type="varchar(255)">
+               <constraints nullable="true"/>
+           </column>
+       </createTable>
+       <dropDefaultValue tableName="classroom_student" columnName="created_date" columnDataType="${datetimeType}"/>
+       <dropDefaultValue tableName="classroom_student" columnName="last_modified_date" columnDataType="${datetimeType}"/>
+
+   </changeSet>
+</databaseChangeLog>

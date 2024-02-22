@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="20240212034400" author="geeta">
+        <createTable tableName="student">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_enabled" type="boolean" defaultValue="false">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="address" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="join_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="parent_name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dob" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_modified_by" type="${datetimeType}">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_modified_date" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <dropDefaultValue tableName="student" columnName="created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="student" columnName="last_modified_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+</databaseChangeLog>

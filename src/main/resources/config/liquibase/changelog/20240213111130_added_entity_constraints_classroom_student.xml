@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+<changeSet id="20240213111130" author="geeta">
+
+        <addForeignKeyConstraint baseTableName="classroom_student"
+                                 baseColumnNames="classroom_id"
+                                 constraintName="fk_classroom_student__classroom_id"
+                                 referencedTableName="classroom"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="classroom_student"
+                                 baseColumnNames="student_id"
+                                 constraintName="fk_classroom_student__student_id"
+                                 referencedTableName="student"
+                                 referencedColumnNames="id"/>
+
+
+    </changeSet>
+</databaseChangeLog>

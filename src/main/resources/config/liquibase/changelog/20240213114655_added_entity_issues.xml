@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="20240213114655" author="geeta">
+        <createTable tableName="issues">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)"/>
+            <column name="details" type="text"/>
+            <column name="student_id" type="bigint"/>
+            <column name="is_resolved" type="boolean"/>
+            <column name="type" type="varchar(255)"/>
+
+        <column name="created_date" type="${datetimeType}">
+            <constraints nullable="true"/>
+        </column>
+        <column name="created_by" type="varchar(255)">
+            <constraints nullable="true"/>
+        </column>
+        <column name="last_modified_by" type="${datetimeType}">
+            <constraints nullable="true"/>
+        </column>
+        <column name="last_modified_date" type="varchar(255)">
+            <constraints nullable="true"/>
+        </column>
+    </createTable>
+    <dropDefaultValue tableName="exam" columnName="created_date" columnDataType="${datetimeType}"/>
+    <dropDefaultValue tableName="exam" columnName="last_modified_date" columnDataType="${datetimeType}"/>
+</changeSet>
+</databaseChangeLog>

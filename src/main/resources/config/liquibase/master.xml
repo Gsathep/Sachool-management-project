@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="floatType" value="float" dbms="mysql"/>
+    <property name="clobType" value="clob" dbms="mysql"/>
+    <property name="blobType" value="longblob" dbms="mysql"/>
+    <property name="uuidType" value="varchar(36)" dbms="mysql"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
+
+    <include file="config/liquibase/changelog/20240212034400_added_entity_student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240212012930_added_entity_attendance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240212054520_added_entity_teacher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240212060010_added_entity_constraints_attendance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240212061430_added_entity_classroom.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240212062450_added_entity_timetable.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213100730_added_entity_constraints_classroom.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213104678_added_entity_subject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213103060_added_entity_constraints_timetable.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213105432_added_entity_constraints_subject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213105924_added_entity_classroom_student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213111130_added_entity_constraints_classroom_student.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213113620_added_entity_exam.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213114655_added_entity_issues.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213115200_added_entity_constraints_issues.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213115835_added_entity_result.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20240213120637_added_entity_constraints_result.xml" relativeToChangelogFile="false"/>
+
+
+</databaseChangeLog>
